@@ -22,8 +22,8 @@ jobs:
 
     - name: Upload Glue job script to S3
       run: |
-        BUCKET_NAME="lava0.1"
-        S3_PATH="Customer SCD1JOBS/"
+        BUCKET_NAME="lava01"
+        S3_PATH="Customer_SCD1JOBS/"
 
         echo "Uploading Glue job script to S3..."
         aws s3 cp glue-jobs/jobs/my_glue_job.py s3://$BUCKET_NAME/$S3_PATH/my_glue_job.py
