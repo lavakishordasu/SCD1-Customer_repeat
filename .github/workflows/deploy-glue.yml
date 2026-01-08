@@ -26,5 +26,9 @@ jobs:
         S3_PATH="Customer_SCD1JOBS/"
 
         echo "Uploading Glue job script to S3..."
-        aws s3 cp glue-jobs/jobs/my_glue_job.py s3://$BUCKET_NAME/$S3_PATH/my_glue_job.py
+        aws s3 cp . s3://$BUCKET_NAME/$S3_PATH \
+        --recursive \
+        --exclude "*" \
+        --include "*.py"
+
         echo "Upload completed successfully!"
